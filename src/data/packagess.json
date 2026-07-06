@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1",
+    "trackingNumber": "CA102938475",
+    "recipient": "John Anderson",
+    "sender": "Amazon Canada",
+    "status": "In Transit",
+    "carrier": "Canada Post",
+    "destination": "Toronto, ON",
+    "createdAt": "2026-06-25"
+  },
+  {
+    "id": "2",
+    "trackingNumber": "CA564738291",
+    "recipient": "Emily Carter",
+    "sender": "Best Buy Canada",
+    "status": "Delivered",
+    "carrier": "Purolator",
+    "destination": "Vancouver, BC",
+    "createdAt": "2026-06-22"
+  },
+  {
+    "id": "3",
+    "trackingNumber": "CA918273645",
+    "recipient": "Michael Wilson",
+    "sender": "Walmart Canada",
+    "status": "Pending",
+    "carrier": "FedEx",
+    "destination": "Calgary, AB",
+    "createdAt": "2026-06-23"
+  },
+  {
+    "id": "4",
+    "trackingNumber": "CA384756291",
+    "recipient": "Sophia Brown",
+    "sender": "Apple",
+    "status": "Returned",
+    "carrier": "UPS",
+    "destination": "Montreal, QC",
+    "createdAt": "2026-06-20"
+  },
+  {
+    "id": "5",
+    "trackingNumber": "CA746291835",
+    "recipient": "Daniel Harris",
+    "sender": "Costco",
+    "status": "In Transit",
+    "carrier": "Purolator",
+    "destination": "Ottawa, ON",
+    "createdAt": "2026-06-24"
+  },
+  {
+    "id": "6",
+    "trackingNumber": "CA928374615",
+    "recipient": "Olivia Martin",
+    "sender": "Nike",
+    "status": "Delivered",
+    "carrier": "Canada Post",
+    "destination": "Edmonton, AB",
+    "createdAt": "2026-06-21"
+  },
+  {
+    "id": "7",
+    "trackingNumber": "CA675849302",
+    "recipient": "Noah Taylor",
+    "sender": "Samsung",
+    "status": "Pending",
+    "carrier": "UPS",
+    "destination": "Winnipeg, MB",
+    "createdAt": "2026-06-26"
+  },
+  {
+    "id": "8",
+    "trackingNumber": "CA192837465",
+    "recipient": "Charlotte White",
+    "sender": "Lululemon",
+    "status": "Delivered",
+    "carrier": "Canada Post",
+    "destination": "Halifax, NS",
+    "createdAt": "2026-06-19"
+  },
+  {
+    "id": "9",
+    "trackingNumber": "CA837261945",
+    "recipient": "James Clark",
+    "sender": "Canadian Tire",
+    "status": "In Transit",
+    "carrier": "FedEx",
+    "destination": "Regina, SK",
+    "createdAt": "2026-06-27"
+  },
+  {
+    "id": "10",
+    "trackingNumber": "CA564192837",
+    "recipient": "Amelia Lewis",
+    "sender": "IKEA Canada",
+    "status": "Returned",
+    "carrier": "Purolator",
+    "destination": "Saskatoon, SK",
+    "createdAt": "2026-06-18"
+  },
+  {
+    "id": "11",
+    "trackingNumber": "CA918374625",
+    "recipient": "Benjamin Walker",
+    "sender": "Home Depot",
+    "status": "Pending",
+    "carrier": "Canada Post",
+    "destination": "Quebec City, QC",
+    "createdAt": "2026-06-28"
+  },
+  {
+    "id": "12",
+    "trackingNumber": "CA384920175",
+    "recipient": "Isabella Young",
+    "sender": "Hudson's Bay",
+    "status": "Delivered",
+    "carrier": "UPS",
+    "destination": "Victoria, BC",
+    "createdAt": "2026-06-17"
+  },
+  {
+    "id": "13",
+    "trackingNumber": "CA657483920",
+    "recipient": "William Scott",
+    "sender": "Staples Canada",
+    "status": "In Transit",
+    "carrier": "FedEx",
+    "destination": "St. John's, NL",
+    "createdAt": "2026-06-29"
+  },
+  {
+    "id": "14",
+    "trackingNumber": "CA273849156",
+    "recipient": "Mia Green",
+    "sender": "Sport Chek",
+    "status": "Delivered",
+    "carrier": "Canada Post",
+    "destination": "Kelowna, BC",
+    "createdAt": "2026-06-16"
+  },
+  {
+    "id": "15",
+    "trackingNumber": "CA918273564",
+    "recipient": "Lucas King",
+    "sender": "Indigo",
+    "status": "Pending",
+    "carrier": "Purolator",
+    "destination": "London, ON",
+    "createdAt": "2026-06-30"
+  },
+  {
+    "id": "16",
+    "trackingNumber": "CA482910375",
+    "recipient": "Harper Moore",
+    "sender": "Amazon Canada",
+    "status": "In Transit",
+    "carrier": "UPS",
+    "destination": "Mississauga, ON",
+    "createdAt": "2026-07-01"
+  },
+  {
+    "id": "17",
+    "trackingNumber": "CA384756120",
+    "recipient": "Henry Adams",
+    "sender": "Apple",
+    "status": "Delivered",
+    "carrier": "FedEx",
+    "destination": "Surrey, BC",
+    "createdAt": "2026-06-14"
+  },
+  {
+    "id": "18",
+    "trackingNumber": "CA728194563",
+    "recipient": "Ella Mitchell",
+    "sender": "Walmart Canada",
+    "status": "Returned",
+    "carrier": "Canada Post",
+    "destination": "Hamilton, ON",
+    "createdAt": "2026-06-15"
+  },
+  {
+    "id": "19",
+    "trackingNumber": "CA928374150",
+    "recipient": "Alexander Hall",
+    "sender": "Best Buy Canada",
+    "status": "Pending",
+    "carrier": "Purolator",
+    "destination": "Burnaby, BC",
+    "createdAt": "2026-07-02"
+  },
+  {
+    "id": "20",
+    "trackingNumber": "CA564738102",
+    "recipient": "Grace Nelson",
+    "sender": "Costco",
+    "status": "In Transit",
+    "carrier": "FedEx",
+    "destination": "Richmond, BC",
+    "createdAt": "2026-07-03"
+  }
+]
