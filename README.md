@@ -28,7 +28,7 @@ git clone https://github.com/rgoles/parcelTrack.git
 ### 2. Navigate to the project directory
 
 ```bash
-cd ParcelTrack
+cd parcelTrack
 ```
 
 ### 3. Install dependencies
