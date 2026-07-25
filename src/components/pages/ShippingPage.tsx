@@ -130,10 +130,18 @@ export const ShippingPage = () => {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>Confirm package deletion</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account from our servers.
+              Are you sure you want to delete package{" "}
+              <span className="font-bold">
+                {packageToDelete?.trackingNumber}
+              </span>{" "}
+              for{" "}
+              <span className="font-bold">
+                {packageToDelete?.recipientFirstName}{" "}
+                {packageToDelete?.recipientLastName}
+              </span>
+              ? This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
