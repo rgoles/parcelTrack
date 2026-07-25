@@ -34,7 +34,7 @@ import { Button } from "../ui/button"
 export const ShippingPage = () => {
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null)
   const [packageToDelete, setPackageToDelete] = useState<Package | null>(null)
-  const [packageList, setPackageList] = useState(packages)
+  const [packageList, setPackageList] = useState(packages as Package[])
   const handleEdit = (pkg: Package) => {
     setSelectedPackage(pkg)
   }
@@ -82,26 +82,61 @@ export const ShippingPage = () => {
               <FieldSet className="w-full">
                 <FieldGroup>
                   <Field>
-                    <FieldLabel htmlFor="username">Username</FieldLabel>
-                    <Input defaultValue={selectedPackage?.recipientFirstName} />
+                    <FieldLabel htmlFor="recipientFirstName">
+                      Recipient First Name
+                    </FieldLabel>
+                    <Input
+                      value={selectedPackage?.recipientFirstName ?? ""}
+                      onChange={(e) => {
+                        if (selectedPackage)
+                          setSelectedPackage({
+                            ...selectedPackage,
+                            recipientFirstName: e.target.value,
+                          })
+                      }}
+                    />
 
                     <FieldDescription>
-                      Choose a unique username for your account.
+                      Enter the recipient's first name.
                     </FieldDescription>
                   </Field>
                   <Field>
-                    <FieldLabel htmlFor="password">Password</FieldLabel>
+                    <FieldLabel htmlFor="recipientLastName">
+                      Recipient Last Name
+                    </FieldLabel>
+                    <Input
+                      value={selectedPackage?.recipientLastName ?? ""}
+                      onChange={(e) => {
+                        if (selectedPackage)
+                          setSelectedPackage({
+                            ...selectedPackage,
+                            recipientLastName: e.target.value,
+                          })
+                      }}
+                    />
+
                     <FieldDescription>
-                      Must be at least 8 characters long.
+                      Enter the recipient's last name.
                     </FieldDescription>
-                    <Input defaultValue={selectedPackage?.recipientLastName} />
                   </Field>
                   <Field>
-                    <FieldLabel htmlFor="password">Password</FieldLabel>
+                    <FieldLabel htmlFor="recipientEmail">
+                      Recipient Email
+                    </FieldLabel>
+                    <Input
+                      value={selectedPackage?.recipientEmail ?? ""}
+                      onChange={(e) => {
+                        if (selectedPackage)
+                          setSelectedPackage({
+                            ...selectedPackage,
+                            recipientEmail: e.target.value,
+                          })
+                      }}
+                    />
+
                     <FieldDescription>
-                      Must be at least 8 characters long.
+                      Enter a valid email address for shipment updates.
                     </FieldDescription>
-                    <Input defaultValue={selectedPackage?.recipientEmail} />
                   </Field>
                 </FieldGroup>
               </FieldSet>
@@ -113,7 +148,16 @@ export const ShippingPage = () => {
             </DialogClose>
             <Button
               onClick={() => {
-                console.log("saved")
+                if (selectedPackage)
+                  setPackageList(
+                    packageList.map((pkg) => {
+                      if (pkg.id === selectedPackage.id) {
+                        return selectedPackage
+                      }
+                      return pkg
+                    })
+                  )
+                setSelectedPackage(null)
               }}
             >
               Update

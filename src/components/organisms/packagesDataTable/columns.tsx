@@ -25,6 +25,8 @@ export type Package = {
   trackingNumber: string
   referenceNumber: string
 
+  currency: string
+
   senderCompany: string
 
   recipientFirstName: string
