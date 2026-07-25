@@ -187,7 +187,6 @@ export const columns = (actions: ColumnActions): ColumnDef<Package>[] => [
               Copy Tracking Number
             </DropdownMenuItem>
 
-            
             <DropdownMenuSeparator />
 
             <DropdownMenuItem

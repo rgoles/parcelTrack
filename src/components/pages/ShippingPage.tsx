@@ -34,20 +34,20 @@ import { Button } from "../ui/button"
 export const ShippingPage = () => {
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null)
   const [packageToDelete, setPackageToDelete] = useState<Package | null>(null)
-
+  const [packageList, setPackageList] = useState(packages)
   const handleEdit = (pkg: Package) => {
     setSelectedPackage(pkg)
   }
 
   const handleDelete = (pkg: Package) => {
-    setPackageToDelete(pkg)
+    setPackageList(packageList.filter((a) => a.id !== pkg.id))
     console.log(pkg)
   }
 
   const handleChangeStatus = (pkg: Package, status: Package["status"]) => {
     console.log(pkg, status)
   }
-  const data = packages as Package[]
+  const data = packageList as Package[]
   return (
     <main className="mx-4 my-2 w-full space-y-8">
       <header>
@@ -61,7 +61,9 @@ export const ShippingPage = () => {
       <DataTable
         columns={columns({
           onEdit: handleEdit,
-          onDelete: handleDelete,
+          onDelete: (pkg) => {
+            setPackageToDelete(pkg)
+          },
           onChangeStatus: handleChangeStatus,
         })}
         data={data}
@@ -136,7 +138,14 @@ export const ShippingPage = () => {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogAction
+              variant={"destructive"}
+              onClick={() => {
+                if (packageToDelete) handleDelete(packageToDelete)
+              }}
+            >
+              Delete
+            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

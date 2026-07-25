@@ -86,7 +86,7 @@ export function DataTable<TData, TValue>({
               <SelectItem value="In Transit">In Transit</SelectItem>
               <SelectItem value="Processing">Processing</SelectItem>
               <SelectItem value="Picked Up">Picked Up</SelectItem>
-              <SelectItem value="Out of Delivery">Out of Delivery</SelectItem>
+              <SelectItem value="Out for Delivery">Out for Delivery</SelectItem>
               <SelectItem value="Delayed">Delayed</SelectItem>
               <SelectItem value="Pending">Pending</SelectItem>
               <SelectItem value="Delivered">Delivered</SelectItem>
