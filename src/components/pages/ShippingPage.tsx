@@ -35,13 +35,25 @@ export const ShippingPage = () => {
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null)
   const [packageToDelete, setPackageToDelete] = useState<Package | null>(null)
   const [packageList, setPackageList] = useState(packages as Package[])
-  const handleEdit = (pkg: Package) => {
-    setSelectedPackage(pkg)
-  }
+  // const handleEdit = (pkg: Package) => {
+  //   setSelectedPackage(pkg)
+  // }
 
   const handleDelete = (pkg: Package) => {
     setPackageList(packageList.filter((a) => a.id !== pkg.id))
-    console.log(pkg)
+  }
+
+  const handleUpdate = (updatedPkg: Package) => {
+    setPackageList(
+      packageList.map((pkg) => {
+        if (pkg.id === updatedPkg.id) {
+          return updatedPkg
+        }
+        return pkg
+      })
+    )
+
+    setSelectedPackage(null)
   }
 
   const handleChangeStatus = (pkg: Package, status: Package["status"]) => {
@@ -49,7 +61,7 @@ export const ShippingPage = () => {
   }
   const data = packageList as Package[]
   return (
-    <main className="mx-4 my-2 w-full space-y-8">
+    <main className="my-2 flex min-w-0 flex-col space-y-8 px-2 md:w-full md:px-4">
       <header>
         <div>
           <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
@@ -60,7 +72,9 @@ export const ShippingPage = () => {
       </header>
       <DataTable
         columns={columns({
-          onEdit: handleEdit,
+          onEdit: (pkg) => {
+            setSelectedPackage(pkg)
+          },
           onDelete: (pkg) => {
             setPackageToDelete(pkg)
           },
@@ -148,16 +162,7 @@ export const ShippingPage = () => {
             </DialogClose>
             <Button
               onClick={() => {
-                if (selectedPackage)
-                  setPackageList(
-                    packageList.map((pkg) => {
-                      if (pkg.id === selectedPackage.id) {
-                        return selectedPackage
-                      }
-                      return pkg
-                    })
-                  )
-                setSelectedPackage(null)
+                if (selectedPackage) handleUpdate(selectedPackage)
               }}
             >
               Update

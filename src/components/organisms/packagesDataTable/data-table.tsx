@@ -50,8 +50,8 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
-      <div className="flex items-center gap-x-4 py-4">
+    <div className="w-full">
+      <div className="flex flex-col gap-4 py-4 sm:flex-row sm:items-center">
         <Input
           placeholder="Filter tracking number..."
           value={
@@ -95,7 +95,7 @@ export function DataTable<TData, TValue>({
           </SelectContent>
         </Select>
       </div>
-      <div className="overflow-hidden border">
+      <div className="w-full overflow-x-auto border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
