@@ -35,9 +35,6 @@ export const ShippingPage = () => {
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null)
   const [packageToDelete, setPackageToDelete] = useState<Package | null>(null)
   const [packageList, setPackageList] = useState(packages as Package[])
-  // const handleEdit = (pkg: Package) => {
-  //   setSelectedPackage(pkg)
-  // }
 
   const handleDelete = (pkg: Package) => {
     setPackageList(packageList.filter((a) => a.id !== pkg.id))
@@ -57,7 +54,18 @@ export const ShippingPage = () => {
   }
 
   const handleChangeStatus = (pkg: Package, status: Package["status"]) => {
-    console.log(pkg, status)
+    setPackageList(
+      packageList.map((pkgStatus) => {
+        if (pkgStatus.id === pkg.id) {
+          return {
+            ...pkgStatus,
+            status,
+          }
+        }
+
+        return pkgStatus
+      })
+    )
   }
   const data = packageList as Package[]
   return (

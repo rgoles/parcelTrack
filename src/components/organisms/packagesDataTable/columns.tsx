@@ -1,13 +1,17 @@
 import { Badge } from "@/components/ui/badge"
 import type { ColumnDef } from "@tanstack/react-table"
-import { Copy, Eye, MoreVertical, Pen, Trash2 } from "lucide-react"
+import { Copy, Eye, MoreVertical, Pen, Timeline, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Link } from "react-router"
@@ -188,7 +192,80 @@ export const columns = (actions: ColumnActions): ColumnDef<Package>[] => [
               <Copy />
               Copy Tracking Number
             </DropdownMenuItem>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>
+                <Timeline />
+                Change Status
+              </DropdownMenuSubTrigger>
 
+              <DropdownMenuPortal>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Pending")
+                    }
+                  >
+                    Pending
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Processing")
+                    }
+                  >
+                    Processing
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Picked Up")
+                    }
+                  >
+                    Picked Up
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "In Transit")
+                    }
+                  >
+                    In Transit
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Out for Delivery")
+                    }
+                  >
+                    Out for Delivery
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Delivered")
+                    }
+                  >
+                    Delivered
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Delayed")
+                    }
+                  >
+                    Delayed
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem
+                    onClick={() =>
+                      actions.onChangeStatus(row.original, "Returned")
+                    }
+                  >
+                    Returned
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuPortal>
+            </DropdownMenuSub>
             <DropdownMenuSeparator />
 
             <DropdownMenuItem
